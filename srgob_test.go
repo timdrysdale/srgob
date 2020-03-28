@@ -11,12 +11,11 @@ func TestEncodeDecode(t *testing.T) {
 	var buf bytes.Buffer
 
 	m1 := Message{
-		Topic:        "1234-abcd",
-		ConnectionID: "5678-efgh",
-		Data:         []byte("This is a test message\nIsn't it"),
+		ID:   "5678-efgh",
+		Data: []byte("This is a test message\nIsn't it"),
 	}
 
-	expectedString := "1234-abcd 5678-efgh 31"
+	expectedString := "5678-efgh 31"
 
 	encoder := gob.NewEncoder(&buf)
 
